@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --montserrat: 'Montserrat', sans-serif;
+
+    --fs-60: 60px; --fs-55: 55px; --fs-50: 50px;
+    --fs-40: 40px; --fs-45: 45px; --fs-30: 30px;
+    --fs-25: 25px; --fs-20: 20px; --fs-15: 15px;
+    --fs-10: 10px; --fs-35: 35px;
+
+    --fw-300: 300; --fw-400: 400; --fw-500: 500;
+    --fw-600: 600; --fw-700: 700; --fw-800: 800;
+    --fw-900: 900;
+
+    --color-purple: #6901bc;
+}
+
+* { font-family: var(--montserrat); }
+
+.montserrat { font-family: var(--montserrat) !important; }
+
+.fw-300 { font-weight: var(--fw-300) !important; }
+.fw-400 { font-weight: var(--fw-400) !important; }
+.fw-500 { font-weight: var(--fw-500) !important; }
+.fw-600 { font-weight: var(--fw-600) !important; }
+.fw-700 { font-weight: var(--fw-700) !important; }
+.fw-800 { font-weight: var(--fw-800) !important; }
+.fw-900 { font-weight: var(--fw-900) !important; }
+
+.fs-60 { font-size: var(--fs-60) !important; }
+.fs-55 { font-size: var(--fs-55) !important; }
+.fs-50 { font-size: var(--fs-50) !important; }
+.fs-45 { font-size: var(--fs-45) !important; }
+.fs-40 { font-size: var(--fs-40) !important; }
+.fs-35 { font-size: var(--fs-35) !important; }
+.fs-30 { font-size: var(--fs-30) !important; }
+.fs-25 { font-size: var(--fs-25) !important; }
+.fs-20 { font-size: var(--fs-20) !important; }
+.fs-15 { font-size: var(--fs-15) !important; }
+.fs-10 { font-size: var(--fs-10) !important; }
+
+[x-cloak] {
+  display: none !important;
+}
+
+.max-w-300 { max-width: 100% !important; }
+
+.custom-bg-purple {
+  background-color: var(--color-purple) !important;
+}
+
+/* EDITING BOOTSTRAP VALUE */
+// $white: #ffffff;
+// $light: #F8F5F1;
+// $orange:#F8A488;
+// $green: #45526C;
+// $purple:#45526C;
+// $info:  #0dcaf0;
+// $danger:#dc3545;
+
+$white: #ffffff;
+$light: #F8F5F1;
+$orange:#F8A488;
+$green: #000000;
+$purple:#000000;
+$info:  #0dcaf0;
+$danger:#dc3545;
+
+$theme-colors: (
+  "primary":    $green,
+  "secondary":  $orange,
+  "success":    $green,
+  "info":       $info,
+  "warning":    $orange,
+  "danger":     $danger,
+  "light":      $white,
+  "dark":       $purple
+);
+
+.fill-dark { fill: $purple !important; }
+
+$pagination-color:      $purple;
+$pagination-bg:         $light;
+$pagination-active-bg:  $purple;
+
+
+@import "~bootstrap/scss/bootstrap";
+@import "~@glidejs/glide/src/assets/sass/glide.core";
+@import "~@glidejs/glide/src/assets/sass/glide.theme";
+
+.text-ellipsis {
+    overflow: hidden;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /* add width also */
+}
+
+a.active {
+  background-color: $purple !important;
+}
+.nav-link {
+  color: $purple;
+}
+
+.border-style-dotted {
+  border-style: dotted !important;
+}
+.border-style-dashed {
+  border-style: dashed !important;
+}
+
+/* SVG RESIZER */
+.hero-resize {
+  width: min(50vw, 500px);
+  height: min(50vw, 500px);
+}
+
+.admin-resize {
+  width: min(50vw, 200px);
+  height: min(50vw, 200px);
+}
+
+.about-resize {
+  width: min(50vw, 500px);
+  height: min(50vw, 500px);
+}
+
+.z-index-999 {
+  z-index: 999;
+}
+
+@media all and (min-width: 768px) {
+	// .dropdown .dropdown-menu{ display: none; }
+	// .dropdown:hover .dropdown-menu{ display: block; }
+	// .dropdown .dropdown-menu{ margin-top:0; }
+  .nav-item:hover {
+    background-color: $purple;
+  }
+  .nav-item:focus {
+    background-color: $purple;
+  }
+  .custom-dropdown:hover .custom-dropdown-menu {
+    display: block;
+  }
+  // .max-w-300 { max-width: 300px !important; };
+}
+
+/* ============ desktop view ============ */
+@media all and (min-width: 768px) {
+	.dropdown-menu li{ position: relative; 	}
+	.nav-item .submenu{ 
+		display: none;
+		position: absolute;
+		left:100%; top:-7px;
+	}
+	.nav-item .submenu-left{ 
+		right:100%; left:auto;
+	}
+	.dropdown-menu > li:hover{ background-color: #f1f1f1 }
+	.dropdown-menu > li:hover > .submenu{ display: block; }
+}	
+/* ============ desktop view .end// ============ */
+
+/* ============ small devices ============ */
+@media (max-width: 768px) {
+  .dropdown-menu .dropdown-menu{
+      margin-left:0.7rem; margin-right:0.7rem; margin-bottom: .5rem;
+  }
+}	
+/* ============ small devices .end// ============ */
+
+
